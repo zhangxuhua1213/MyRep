@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.ConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.entity.Config" >
+    <constructor >
+      <arg column="yueka" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="jika" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="nianka" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zhongshenka" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
+  <select id="selectOption" resultType="com.entity.Config">
+    select * from cmf_config
+  </select>
+
+  <insert id="insert" parameterType="com.entity.Config" >
+    insert into cmf_config (yueka, jika, nianka, 
+      zhongshenka)
+    values (#{yueka,jdbcType=VARCHAR}, #{jika,jdbcType=VARCHAR}, #{nianka,jdbcType=VARCHAR}, 
+      #{zhongshenka,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Config" >
+    insert into cmf_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="yueka != null" >
+        yueka,
+      </if>
+      <if test="jika != null" >
+        jika,
+      </if>
+      <if test="nianka != null" >
+        nianka,
+      </if>
+      <if test="zhongshenka != null" >
+        zhongshenka,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="yueka != null" >
+        #{yueka,jdbcType=VARCHAR},
+      </if>
+      <if test="jika != null" >
+        #{jika,jdbcType=VARCHAR},
+      </if>
+      <if test="nianka != null" >
+        #{nianka,jdbcType=VARCHAR},
+      </if>
+      <if test="zhongshenka != null" >
+        #{zhongshenka,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

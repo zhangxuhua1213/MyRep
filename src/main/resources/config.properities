@@ -1,0 +1,12 @@
+driver=com.mysql.jdbc.Driver
+url=jdbc:mysql://127.0.0.1:3306/daili?characterEncoding=utf-8
+dbuser=root
+dbpassword=root
+acquireIncrement=5
+initialPoolSize=5
+minPoolSize=1
+maxPoolSize=20
+maxIdleTime=25000
+idleConnectionTestPeriod=25000
+testConnectionOnCheckin=true
+preferredTestQuery=SELECT 1

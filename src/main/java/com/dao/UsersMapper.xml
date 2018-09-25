@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.UsersMapper" >
+  <resultMap id="BaseResultMap" type="com.entity.Users" >
+    <constructor >
+      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="user_login" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="user_pass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="user_nicename" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="user_email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="user_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="avatar" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="avatar_thumb" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex" jdbcType="SMALLINT" javaType="java.lang.Short" />
+      <arg column="birthday" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="signature" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="last_login_ip" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="last_login_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="user_activation_key" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="user_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="score" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="user_type" jdbcType="SMALLINT" javaType="java.lang.Short" />
+      <arg column="coin" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="mobile" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="token" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="expiretime" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="weixin" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="consumption" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="votes" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="votestotal" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="province" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="city" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="isrecommend" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="openid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="login_type" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="iszombie" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="isrecord" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="iszombiep" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="issuper" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="ishot" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="isauth" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="bonus_day" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="bonus_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="free_viewing_time" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="member_validity" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="invitation_code" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="family_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="family_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="inviter" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="dis_votes" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="souquan_nums" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="no_share" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="monthcard_nums" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="is_auth" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="agent_ratio" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="daili_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="daili_qq" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="yueka_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="jika_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="nianka_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zhongshenka_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="daili_free" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_login, user_pass, user_nicename, user_email, user_url, avatar, avatar_thumb, 
+    sex, birthday, signature, last_login_ip, last_login_time, create_time, user_activation_key, 
+    user_status, score, user_type, coin, mobile, token, expiretime, weixin, consumption, 
+    votes, votestotal, province, city, isrecommend, openid, login_type, iszombie, isrecord, 
+    iszombiep, issuper, ishot, isauth, bonus_day, bonus_time, free_viewing_time, member_validity, 
+    invitation_code, family_id, family_name, inviter, dis_votes, souquan_nums, no_share, 
+    monthcard_nums, is_auth, agent_ratio, daili_id, daili_qq, yueka_url, jika_url, nianka_url, 
+    zhongshenka_url, daili_free
+  </sql>
+  <!--自定义开始-->
+  <sql id="my_Column_list">
+     id, user_login, user_pass,inviter,create_time
+  </sql>
+  <!--配置一个resultMap 指定返回的类型 -->
+  <resultMap id="userMap" type="com.entity.Users">
+    <id column="id" property="id" />
+    <result column="user_login" property="userLogin" />
+    <result column="user_pass" property="userPass" />
+    <result column="user_type" property="userType" />
+    <result column="inviter" property="inviter" />
+    <result column="create_time" property="createTime" />
+  </resultMap>
+
+  <resultMap id="jifenRecord" type="com.result.JifenRecord">
+    <id column="id" property="id" />
+    <result column="user_nicename" property="userNicename" />
+    <result column="jifen" property="jifen" />
+    <result column="addtime" property="addtime" />
+  </resultMap>
+  <select id="checkUserIsRegister" resultType="com.entity.Users">
+        select * from cmf_users
+        where user_login=#{username,jdbcType=VARCHAR} and user_pass=#{password,jdbcType=VARCHAR}
+    </select>
+  <select id="getCount" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+      count(id)
+    from  cmf_users
+    where inviter=#{id} and user_type=3
+  </select>
+  <select id="getUserLsit" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from  cmf_users
+    where inviter=#{id} and user_type=3
+    limit #{start},#{limit}
+  </select>
+
+  <select id="getHuiyuanNumById" parameterType="java.lang.Long" resultType="java.lang.Integer">
+    SELECT count(*) FROM cmf_users a,cmf_users b
+    where a.inviter=b.id and a.user_type=2 and b.id=#{id}
+  </select>
+
+  <select id="getUserCountByInviter" parameterType="java.lang.Long" resultType="java.lang.Integer">
+    select
+    count(id)
+    from  cmf_users
+    where id=#{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="getUserListByInviter" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from  cmf_users
+    where id=#{id,jdbcType=BIGINT}
+  </select>
+
+
+  <select id="getJifenCount" resultType="java.lang.Integer">
+    select
+      count(id)
+    from  cmf_charge_jifen
+  </select>
+
+  <select id="getMothCardNumsById" parameterType="java.lang.Long" resultType="java.lang.Integer">
+    select monthCard_nums
+    from cmf_users
+    where id=#{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="getJifenRecord" resultMap="jifenRecord">
+    SELECT a.id,b.user_nicename,a.jifen,a.addtime
+    FROM cmf_charge_jifen a ,cmf_users b where a.uid=b.id
+    limit #{start},#{limit}
+  </select>
+  <update id="updateMonthcardnumsById" >
+    update cmf_users
+    set monthcard_nums = #{monthcardnums}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+<!--自定义结束-->
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from cmf_users
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from cmf_users
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Users" >
+    insert into cmf_users (id, user_login, user_pass, 
+      user_nicename, user_email, user_url, 
+      avatar, avatar_thumb, sex, 
+      birthday, signature, last_login_ip, 
+      last_login_time, create_time, user_activation_key, 
+      user_status, score, user_type, 
+      coin, mobile, token, 
+      expiretime, weixin, consumption, 
+      votes, votestotal, province, 
+      city, isrecommend, openid, 
+      login_type, iszombie, isrecord, 
+      iszombiep, issuper, ishot, isauth, 
+      bonus_day, bonus_time, free_viewing_time, 
+      member_validity, invitation_code, family_id, 
+      family_name, inviter, dis_votes, 
+      souquan_nums, no_share, monthcard_nums, 
+      is_auth, agent_ratio, daili_id, 
+      daili_qq, yueka_url, jika_url, 
+      nianka_url, zhongshenka_url, daili_free
+      )
+    values (#{id,jdbcType=BIGINT}, #{userLogin,jdbcType=VARCHAR}, #{userPass,jdbcType=VARCHAR}, 
+      #{userNicename,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, #{userUrl,jdbcType=VARCHAR}, 
+      #{avatar,jdbcType=VARCHAR}, #{avatarThumb,jdbcType=VARCHAR}, #{sex,jdbcType=SMALLINT}, 
+      #{birthday,jdbcType=VARCHAR}, #{signature,jdbcType=VARCHAR}, #{lastLoginIp,jdbcType=VARCHAR}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{userActivationKey,jdbcType=VARCHAR}, 
+      #{userStatus,jdbcType=INTEGER}, #{score,jdbcType=INTEGER}, #{userType,jdbcType=SMALLINT}, 
+      #{coin,jdbcType=DECIMAL}, #{mobile,jdbcType=VARCHAR}, #{token,jdbcType=VARCHAR}, 
+      #{expiretime,jdbcType=INTEGER}, #{weixin,jdbcType=VARCHAR}, #{consumption,jdbcType=INTEGER}, 
+      #{votes,jdbcType=DECIMAL}, #{votestotal,jdbcType=DECIMAL}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{isrecommend,jdbcType=BIT}, #{openid,jdbcType=VARCHAR}, 
+      #{loginType,jdbcType=VARCHAR}, #{iszombie,jdbcType=BIT}, #{isrecord,jdbcType=BIT}, 
+      #{iszombiep,jdbcType=BIT}, #{issuper,jdbcType=BIT}, #{ishot,jdbcType=BIT}, #{isauth,jdbcType=BIT}, 
+      #{bonusDay,jdbcType=INTEGER}, #{bonusTime,jdbcType=INTEGER}, #{freeViewingTime,jdbcType=INTEGER}, 
+      #{memberValidity,jdbcType=INTEGER}, #{invitationCode,jdbcType=VARCHAR}, #{familyId,jdbcType=INTEGER}, 
+      #{familyName,jdbcType=VARCHAR}, #{inviter,jdbcType=VARCHAR}, #{disVotes,jdbcType=DECIMAL}, 
+      #{souquanNums,jdbcType=INTEGER}, #{noShare,jdbcType=INTEGER}, #{monthcardNums,jdbcType=INTEGER}, 
+      #{isAuth,jdbcType=INTEGER}, #{agentRatio,jdbcType=VARCHAR}, #{dailiId,jdbcType=INTEGER}, 
+      #{dailiQq,jdbcType=VARCHAR}, #{yuekaUrl,jdbcType=VARCHAR}, #{jikaUrl,jdbcType=VARCHAR}, 
+      #{niankaUrl,jdbcType=VARCHAR}, #{zhongshenkaUrl,jdbcType=VARCHAR}, #{dailiFree,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Users" >
+    insert into cmf_users
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userLogin != null" >
+        user_login,
+      </if>
+      <if test="userPass != null" >
+        user_pass,
+      </if>
+      <if test="userNicename != null" >
+        user_nicename,
+      </if>
+      <if test="userEmail != null" >
+        user_email,
+      </if>
+      <if test="userUrl != null" >
+        user_url,
+      </if>
+      <if test="avatar != null" >
+        avatar,
+      </if>
+      <if test="avatarThumb != null" >
+        avatar_thumb,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="signature != null" >
+        signature,
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="userActivationKey != null" >
+        user_activation_key,
+      </if>
+      <if test="userStatus != null" >
+        user_status,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="coin != null" >
+        coin,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="token != null" >
+        token,
+      </if>
+      <if test="expiretime != null" >
+        expiretime,
+      </if>
+      <if test="weixin != null" >
+        weixin,
+      </if>
+      <if test="consumption != null" >
+        consumption,
+      </if>
+      <if test="votes != null" >
+        votes,
+      </if>
+      <if test="votestotal != null" >
+        votestotal,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="isrecommend != null" >
+        isrecommend,
+      </if>
+      <if test="openid != null" >
+        openid,
+      </if>
+      <if test="loginType != null" >
+        login_type,
+      </if>
+      <if test="iszombie != null" >
+        iszombie,
+      </if>
+      <if test="isrecord != null" >
+        isrecord,
+      </if>
+      <if test="iszombiep != null" >
+        iszombiep,
+      </if>
+      <if test="issuper != null" >
+        issuper,
+      </if>
+      <if test="ishot != null" >
+        ishot,
+      </if>
+      <if test="isauth != null" >
+        isauth,
+      </if>
+      <if test="bonusDay != null" >
+        bonus_day,
+      </if>
+      <if test="bonusTime != null" >
+        bonus_time,
+      </if>
+      <if test="freeViewingTime != null" >
+        free_viewing_time,
+      </if>
+      <if test="memberValidity != null" >
+        member_validity,
+      </if>
+      <if test="invitationCode != null" >
+        invitation_code,
+      </if>
+      <if test="familyId != null" >
+        family_id,
+      </if>
+      <if test="familyName != null" >
+        family_name,
+      </if>
+      <if test="inviter != null" >
+        inviter,
+      </if>
+      <if test="disVotes != null" >
+        dis_votes,
+      </if>
+      <if test="souquanNums != null" >
+        souquan_nums,
+      </if>
+      <if test="noShare != null" >
+        no_share,
+      </if>
+      <if test="monthcardNums != null" >
+        monthcard_nums,
+      </if>
+      <if test="isAuth != null" >
+        is_auth,
+      </if>
+      <if test="agentRatio != null" >
+        agent_ratio,
+      </if>
+      <if test="dailiId != null" >
+        daili_id,
+      </if>
+      <if test="dailiQq != null" >
+        daili_qq,
+      </if>
+      <if test="yuekaUrl != null" >
+        yueka_url,
+      </if>
+      <if test="jikaUrl != null" >
+        jika_url,
+      </if>
+      <if test="niankaUrl != null" >
+        nianka_url,
+      </if>
+      <if test="zhongshenkaUrl != null" >
+        zhongshenka_url,
+      </if>
+      <if test="dailiFree != null" >
+        daili_free,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userLogin != null" >
+        #{userLogin,jdbcType=VARCHAR},
+      </if>
+      <if test="userPass != null" >
+        #{userPass,jdbcType=VARCHAR},
+      </if>
+      <if test="userNicename != null" >
+        #{userNicename,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null" >
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userUrl != null" >
+        #{userUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarThumb != null" >
+        #{avatarThumb,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=SMALLINT},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null" >
+        #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginIp != null" >
+        #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userActivationKey != null" >
+        #{userActivationKey,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=SMALLINT},
+      </if>
+      <if test="coin != null" >
+        #{coin,jdbcType=DECIMAL},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null" >
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="expiretime != null" >
+        #{expiretime,jdbcType=INTEGER},
+      </if>
+      <if test="weixin != null" >
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="consumption != null" >
+        #{consumption,jdbcType=INTEGER},
+      </if>
+      <if test="votes != null" >
+        #{votes,jdbcType=DECIMAL},
+      </if>
+      <if test="votestotal != null" >
+        #{votestotal,jdbcType=DECIMAL},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="isrecommend != null" >
+        #{isrecommend,jdbcType=BIT},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="loginType != null" >
+        #{loginType,jdbcType=VARCHAR},
+      </if>
+      <if test="iszombie != null" >
+        #{iszombie,jdbcType=BIT},
+      </if>
+      <if test="isrecord != null" >
+        #{isrecord,jdbcType=BIT},
+      </if>
+      <if test="iszombiep != null" >
+        #{iszombiep,jdbcType=BIT},
+      </if>
+      <if test="issuper != null" >
+        #{issuper,jdbcType=BIT},
+      </if>
+      <if test="ishot != null" >
+        #{ishot,jdbcType=BIT},
+      </if>
+      <if test="isauth != null" >
+        #{isauth,jdbcType=BIT},
+      </if>
+      <if test="bonusDay != null" >
+        #{bonusDay,jdbcType=INTEGER},
+      </if>
+      <if test="bonusTime != null" >
+        #{bonusTime,jdbcType=INTEGER},
+      </if>
+      <if test="freeViewingTime != null" >
+        #{freeViewingTime,jdbcType=INTEGER},
+      </if>
+      <if test="memberValidity != null" >
+        #{memberValidity,jdbcType=INTEGER},
+      </if>
+      <if test="invitationCode != null" >
+        #{invitationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyId != null" >
+        #{familyId,jdbcType=INTEGER},
+      </if>
+      <if test="familyName != null" >
+        #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="inviter != null" >
+        #{inviter,jdbcType=VARCHAR},
+      </if>
+      <if test="disVotes != null" >
+        #{disVotes,jdbcType=DECIMAL},
+      </if>
+      <if test="souquanNums != null" >
+        #{souquanNums,jdbcType=INTEGER},
+      </if>
+      <if test="noShare != null" >
+        #{noShare,jdbcType=INTEGER},
+      </if>
+      <if test="monthcardNums != null" >
+        #{monthcardNums,jdbcType=INTEGER},
+      </if>
+      <if test="isAuth != null" >
+        #{isAuth,jdbcType=INTEGER},
+      </if>
+      <if test="agentRatio != null" >
+        #{agentRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="dailiId != null" >
+        #{dailiId,jdbcType=INTEGER},
+      </if>
+      <if test="dailiQq != null" >
+        #{dailiQq,jdbcType=VARCHAR},
+      </if>
+      <if test="yuekaUrl != null" >
+        #{yuekaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="jikaUrl != null" >
+        #{jikaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="niankaUrl != null" >
+        #{niankaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="zhongshenkaUrl != null" >
+        #{zhongshenkaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="dailiFree != null" >
+        #{dailiFree,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Users" >
+    update cmf_users
+    <set >
+      <if test="userLogin != null" >
+        user_login = #{userLogin,jdbcType=VARCHAR},
+      </if>
+      <if test="userPass != null" >
+        user_pass = #{userPass,jdbcType=VARCHAR},
+      </if>
+      <if test="userNicename != null" >
+        user_nicename = #{userNicename,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null" >
+        user_email = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userUrl != null" >
+        user_url = #{userUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        avatar = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarThumb != null" >
+        avatar_thumb = #{avatarThumb,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=SMALLINT},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null" >
+        signature = #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userActivationKey != null" >
+        user_activation_key = #{userActivationKey,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        user_status = #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=SMALLINT},
+      </if>
+      <if test="coin != null" >
+        coin = #{coin,jdbcType=DECIMAL},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null" >
+        token = #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="expiretime != null" >
+        expiretime = #{expiretime,jdbcType=INTEGER},
+      </if>
+      <if test="weixin != null" >
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="consumption != null" >
+        consumption = #{consumption,jdbcType=INTEGER},
+      </if>
+      <if test="votes != null" >
+        votes = #{votes,jdbcType=DECIMAL},
+      </if>
+      <if test="votestotal != null" >
+        votestotal = #{votestotal,jdbcType=DECIMAL},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="isrecommend != null" >
+        isrecommend = #{isrecommend,jdbcType=BIT},
+      </if>
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="loginType != null" >
+        login_type = #{loginType,jdbcType=VARCHAR},
+      </if>
+      <if test="iszombie != null" >
+        iszombie = #{iszombie,jdbcType=BIT},
+      </if>
+      <if test="isrecord != null" >
+        isrecord = #{isrecord,jdbcType=BIT},
+      </if>
+      <if test="iszombiep != null" >
+        iszombiep = #{iszombiep,jdbcType=BIT},
+      </if>
+      <if test="issuper != null" >
+        issuper = #{issuper,jdbcType=BIT},
+      </if>
+      <if test="ishot != null" >
+        ishot = #{ishot,jdbcType=BIT},
+      </if>
+      <if test="isauth != null" >
+        isauth = #{isauth,jdbcType=BIT},
+      </if>
+      <if test="bonusDay != null" >
+        bonus_day = #{bonusDay,jdbcType=INTEGER},
+      </if>
+      <if test="bonusTime != null" >
+        bonus_time = #{bonusTime,jdbcType=INTEGER},
+      </if>
+      <if test="freeViewingTime != null" >
+        free_viewing_time = #{freeViewingTime,jdbcType=INTEGER},
+      </if>
+      <if test="memberValidity != null" >
+        member_validity = #{memberValidity,jdbcType=INTEGER},
+      </if>
+      <if test="invitationCode != null" >
+        invitation_code = #{invitationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyId != null" >
+        family_id = #{familyId,jdbcType=INTEGER},
+      </if>
+      <if test="familyName != null" >
+        family_name = #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="inviter != null" >
+        inviter = #{inviter,jdbcType=VARCHAR},
+      </if>
+      <if test="disVotes != null" >
+        dis_votes = #{disVotes,jdbcType=DECIMAL},
+      </if>
+      <if test="souquanNums != null" >
+        souquan_nums = #{souquanNums,jdbcType=INTEGER},
+      </if>
+      <if test="noShare != null" >
+        no_share = #{noShare,jdbcType=INTEGER},
+      </if>
+      <if test="monthcardNums != null" >
+        monthcard_nums = #{monthcardNums,jdbcType=INTEGER},
+      </if>
+      <if test="isAuth != null" >
+        is_auth = #{isAuth,jdbcType=INTEGER},
+      </if>
+      <if test="agentRatio != null" >
+        agent_ratio = #{agentRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="dailiId != null" >
+        daili_id = #{dailiId,jdbcType=INTEGER},
+      </if>
+      <if test="dailiQq != null" >
+        daili_qq = #{dailiQq,jdbcType=VARCHAR},
+      </if>
+      <if test="yuekaUrl != null" >
+        yueka_url = #{yuekaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="jikaUrl != null" >
+        jika_url = #{jikaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="niankaUrl != null" >
+        nianka_url = #{niankaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="zhongshenkaUrl != null" >
+        zhongshenka_url = #{zhongshenkaUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="dailiFree != null" >
+        daili_free = #{dailiFree,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+</mapper>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.KamilistMapper" >
+  <resultMap id="BaseResultMap" type="com.entity.Kamilist" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="nums" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="uid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="addtime" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, nums, uid, addtime
+  </sql>
+
+  <select id="selectKamiListAndUser" resultType="com.result.KamiUser" parameterType="java.lang.Long">
+    SELECT a.id,b.user_nicename as nicename ,a.addtime as addtime,a.nums as nums
+    FROM cmf_kamilist a,cmf_users b
+    where a.uid=b.id and b.id=#{userid}
+  </select>
+
+
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cmf_kamilist
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <insert id="insertKamilist" parameterType="com.entity.Kamilist" useGeneratedKeys="true" keyProperty="id" keyColumn="id" >
+     insert into cmf_kamilist (nums, uid)
+    values (#{nums,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER})
+  </insert>
+
+  <insert id="insert" parameterType="com.entity.Kamilist" >
+    insert into cmf_kamilist (id, nums, uid, 
+      addtime)
+    values (#{id,jdbcType=INTEGER}, #{nums,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, 
+      #{addtime,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Kamilist" >
+    insert into cmf_kamilist
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="nums != null" >
+        nums,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="nums != null" >
+        #{nums,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Kamilist" >
+    update cmf_kamilist
+    <set >
+      <if test="nums != null" >
+        nums = #{nums,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Kamilist" >
+    update cmf_kamilist
+    set nums = #{nums,jdbcType=INTEGER},
+      uid = #{uid,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
